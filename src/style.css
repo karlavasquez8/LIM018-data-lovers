@@ -1,0 +1,105 @@
+body{
+    margin:0;
+    background-color: #166ECB;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex{
+    display: flex;
+}
+
+ .flex-mind{
+     flex: 1;
+ }
+
+ .page-header{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+.page-header--item-pokebola{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.btn-logo{
+    width: 80px;
+    padding:7px ;
+}
+
+.btn-pokebola{
+    width: 40px;
+    padding: 7px;
+}
+
+.search{
+    background: #FFFFFF;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 7px;
+    height: 30px;
+}
+
+.btn-search{
+    text-align: center;
+    color: rgb(119, 119, 119);
+    cursor: pointer;
+
+}
+
+.search input{
+    width: 240px;
+    height: 25px;
+    padding: 0 20px;
+    font-size: 18px;
+    color:black;
+    outline: none;
+    border: 0;
+}
+
+.wallpaper{
+    background-image: url("./img/fondo-pantalla.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+    width: 100%;
+}
+
+.writer{
+    color:#FFFFFF;
+    text-align: center;
+    padding: 28px 0px;
+    background-color: #074b95;
+}
+
+.info-card-pokemon{
+    font-size: 12px;
+}
+
+.img-pokemon{
+    background:#FFDA4E;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.data-pokemon{
+    background:#05387E;
+    color: #FFFFFF;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-pokemon{
+    max-width: 850px;
+    display: flex;
+    gap: 20px 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
