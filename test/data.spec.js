@@ -7,7 +7,7 @@ describe('createCard', () => {
   });
 
   it('returns string', () => {
-    const pokemon = [{
+    const pokemon = {
       "num": "001",
       "name": "bulbasaur",
       "generation": {
@@ -22,20 +22,9 @@ describe('createCard', () => {
       "type":[
           "grass",
           "poison"
-      ]}]
-    expect(createCard(pokemon)).toBe(
-    `<section class="info-card-pokemon"> 
-      <div class="img-pokemon">
-       <img src="https://www.serebii.net/pokemongo/pokemon/001.png">
-     </div>
-     <div class="data-pokemon">   
-       <span>"bulbasaur"</span>
-       <span>"001"</span>
-       <span>Tipo:"type":["grass","poison"]
-       </span>
-     </div>
-   </section>`
-    );
+      ]}
+    expect(createCard(pokemon)).toMatchSnapshot()
+  
   });
 });
 
