@@ -1,13 +1,30 @@
-import { example, anotherExample } from '../src/data.js';
+import { createCard, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
+describe('createCard', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof createCard).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns string', () => {
+    const pokemon = {
+      "num": "001",
+      "name": "bulbasaur",
+      "generation": {
+        "num": "generation i",
+        "name": "kanto"
+      },
+      "about": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+      "img": "https://www.serebii.net/pokemongo/pokemon/001.png",
+      "size": {
+        "height": "0.71 m",
+        "weight": "6.9 kg"},
+      "type":[
+          "grass",
+          "poison"
+      ]}
+    expect(createCard(pokemon)).toMatchSnapshot()
+  
   });
 });
 

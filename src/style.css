@@ -89,6 +89,11 @@ body{
     font-size: 12px;
 }
 
+.info-card-pokemon :hover{
+    box-shadow: 0 8px 16px;
+    background-color: rgb(138, 148, 144);
+}
+
 .img-pokemon{
     background:#FFDA4E;
     display: flex;
