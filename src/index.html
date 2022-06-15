@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  
+
   <body>
     <header>
       <div class="page-header ">
@@ -30,11 +30,29 @@
     <main>
       <div class="wallpaper" >  
        <div class="btn-fil-sort">
-         <div>
-           <button class="btn-filter"><span class="">Filtrar</span></button>
+         <div class="menu-contenedor">
+          <nav>
+            <ul class="menu-horizontal">
+              <li>
+               <a  class= "btn-filter" href="#">Filtrar</a>
+              </li>
+              <li>
+                <a class= "btn-sort" href="#">Ordenar</a>
+                <ul class="menu-vertical">
+                  <li><a href="#">De la a la z</a></li>
+                  <li><a href="#">De la z a la a</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Estadisticas</a>
+                <ul class="menu-vertical">
+                  <li><a href="#">Victorias en Batallas</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
           </div>
           <div>
-            <button class="btn-sort">ordenar</button>
           </div>
        </div>
         <div>
