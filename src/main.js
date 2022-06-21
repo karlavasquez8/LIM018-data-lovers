@@ -33,22 +33,40 @@ function addModalFilter(){
     const { types,resistant:resistants, weaknesses } = filtersItems.getFiltersItems(data.pokemon);
 
     const containerOptionType = document.querySelector(".type");
-    const myFilterTypes = types.map((type) => createButton(type) );
+    const myFilterTypes = types.map((type) => createButton(type, "type") );
     containerOptionType.innerHTML = myFilterTypes.join("");
   
     const containerOptionResistant =document.querySelector(".resistant");
-    const myFiltersResistant = resistants.map((resistant) => createButton(resistant) );
+    const myFiltersResistant = resistants.map((resistant) => createButton(resistant, "resistant") );
     containerOptionResistant.innerHTML=myFiltersResistant.join("");
 
     const containerOptionWeaknesses =  document.querySelector(".weaknesses")
-    const myFilterWeaknesse = weaknesses.map((weaknesses)=> createButton(weaknesses));
+    const myFilterWeaknesse = weaknesses.map((weaknesses)=> createButton(weaknesses, "weaknesses"));
     containerOptionWeaknesses.innerHTML= myFilterWeaknesse.join("");
 
     const openModal = document.querySelector(".filter-sheet");
     openModal.classList.add("show-filter");
 }
+//filtrados por botones
+const divFilter= document.querySelector("#filter-pokemons");
 
-
+divFilter.addEventListener("click",(event)=>{
+    if(event.target.classList.contains("filter-option")){
+        let pokemonsFilters;
+        if(event.target.getAttribute("data-group")== "type"){  
+            pokemonsFilters = filters.filterType(data.pokemon,event.target.innerText);
+        };
+        if(event.target.getAttribute("data-group")== "resistant"){
+            pokemonsFilters = filters.filterResistant(data.pokemon,event.target.innerText);
+        };
+        if(event.target.getAttribute("data-group")=="weaknesses"){
+            pokemonsFilters = filters.filterWeaknesses(data.pokemon,event.target.innerText);   
+        }
+        let containerFilter = pokemonsFilters.map((pokemon) => createCard(pokemon))
+        container.innerHTML =containerFilter.join("");
+    };
+});
+//cerrar modal de filtrado
 const btnCloseFilter = document.querySelector('.btn-close-filter');
 btnCloseFilter.addEventListener("click",closeModal)
 
@@ -67,7 +85,4 @@ function closeModal (){
 // const buttonFilter= document.querySelector(".btn-meniFil");
 // buttonFilter.addEventListener("click",pokemonType)
 
-// }
-
-// carType.appendChild(createCarType);
 

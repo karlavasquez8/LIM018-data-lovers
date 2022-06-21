@@ -16,7 +16,7 @@ body{
 
  .flex-mind{
      flex: 1;
- }
+}
 
 /* estilos de encabezado*/
 .page-header{
@@ -110,6 +110,7 @@ body{
     background-color:#166ECB;
     padding: 0;
 }
+
 .menu-vertical li {
     display: flex;
     align-content: center;
@@ -160,6 +161,7 @@ body{
     align-content: center;
     justify-content: center;
 }
+
 .pokemon{
     max-width: 120px;
     height: 120px;
@@ -183,13 +185,13 @@ body{
 }
 /* estilos del modal de filtrado */
 .filter-sheet{
-    background: rgba(21, 106, 196, 0.7);
     width: 100%;
     height: 100%;
     position: fixed;
     top: 69px;
     display:none;
 }
+
 .filter-modal {
     background-color: #1059AB;
     color: #FFFFFF;
@@ -199,17 +201,19 @@ body{
     height: 100%;
     max-width: 300px;;
 }
+
 .show-filter{
     display: block;
 }
 
 .modal{
     width: 150px;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
+
 .scroll{
     cursor: pointer;
     display: flex;
@@ -241,10 +245,12 @@ body{
     width: 100px;
     transition:background-color .10s ease-in-out
 }
+
 .btn-close-filter:hover{
     background-color: #b90000;
     color:#FFFFFF;
 }
+
 .icon-filter{
     display: flex;
 
