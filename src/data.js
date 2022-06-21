@@ -51,28 +51,28 @@ export function ordenarZa(pokemonsDes){
 }
 
 // botones del filtrado en modal
-export const createButton = (filters)=>{
+export const createButton = (filters, group)=>{
   return `
-  <button class="filter-option">${filters} </button>
+  <button class="filter-option" data-group="${group}">${filters}</button>
   `;
 }
 
 //filtrar datos por tipos, generacion, resistencia, debilidades y huevos
 
   const filterType = (pokemons, type) => {
-    return pokemons.filter((pokemon) => pokemon.type === type)
-  }
+    return pokemons.filter((pokemon) => pokemon.type.includes(type))
+  };
 
  //const filterGeneration= (pokemons, generation) => {
    // return pokemons.filter((pokemon) => pokemon.generation == generation)
   //};
 
   const filterResistant= (pokemons, resistant) => {
-    return pokemons.filter((pokemon) => pokemon.resistant == resistant)
+    return pokemons.filter((pokemon) => pokemon.resistant.includes(resistant))
   };
 
   const filterWeaknesses= (pokemons, weaknesses) => {
-    return pokemons.filter((pokemon) => pokemon.weaknesses == weaknesses)
+    return pokemons.filter((pokemon) => pokemon.weaknesses.includes(weaknesses))
   };
 
   //const filterEggs= (pokemons, eggs) => {
