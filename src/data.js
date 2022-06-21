@@ -15,20 +15,43 @@ export const createCard = (pokemon) => {
    `;
 };
 
+// ordenando alfabeticamente de la A a la Z.
 
-// ordenando de forma alfabetica 
+export function ordenarAz(pokemonAsc){
+  pokemonAsc.sort((a, b)=>{
+  if(a.name < b.name){
+     return -1;
+  }
+  if (a.name > b.name){
+    return 1;
+  }
+     return 0;
+ }
+ );
+ const pokemonAz = pokemonAsc.map((nombreAz)=>createCard(nombreAz));
+ return pokemonAz.join('');
+}
 
 
+// ordenando de forma alfabetica de la Z a la A.
 
 
-export const anotherExample = () => {
-  return `OMG`;
-};
+export function ordenarZa(pokemonsDes){
+  pokemonsDes.sort((a, b)=>{
+      if(a.name > b.name){
+          return -1;
+       }
+       if(a.name < b.name){
+          return 1;
+       }
+          return 0;
+    }
+    );
+  const pokemonZa = pokemonsDes.map((nombreZa)=>createCard(nombreZa));
+  return pokemonZa.join('');
+}
 
 
-
-
-console.log();
 
 
 
