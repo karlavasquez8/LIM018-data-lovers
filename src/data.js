@@ -18,7 +18,7 @@ export const createCard = (pokemon) => {
 // ordenando alfabeticamente de la A a la Z.
 
 export function ordenarAz(pokemonAsc){
-  pokemonAsc.sort((a, b)=>{
+ const pokemonAz = pokemonAsc.sort((a, b)=>{
   if(a.name < b.name){
      return -1;
   }
@@ -28,8 +28,8 @@ export function ordenarAz(pokemonAsc){
      return 0;
  }
  );
- const pokemonAz = pokemonAsc.map((nombreAz)=>createCard(nombreAz));
- return pokemonAz.join('');
+ const pokemonAzCards = pokemonAz.map((nombreAz)=>createCard(nombreAz));
+ return pokemonAzCards.join('');
 }
 
 
@@ -37,7 +37,7 @@ export function ordenarAz(pokemonAsc){
 
 
 export function ordenarZa(pokemonsDes){
-  pokemonsDes.sort((a, b)=>{
+ const pokemonZa = pokemonsDes.sort((a, b)=>{
       if(a.name > b.name){
           return -1;
        }
@@ -47,8 +47,8 @@ export function ordenarZa(pokemonsDes){
           return 0;
     }
     );
-  const pokemonZa = pokemonsDes.map((nombreZa)=>createCard(nombreZa));
-  return pokemonZa.join('');
+  const pokemonZaCards = pokemonZa.map((nombreZa)=>createCard(nombreZa));
+  return pokemonZaCards.join('');
 }
 
 
