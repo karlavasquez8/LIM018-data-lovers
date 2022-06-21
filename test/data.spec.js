@@ -1,3 +1,4 @@
+
 import { createCard, anotherExample } from '../src/data.js';
 
 
@@ -29,7 +30,7 @@ describe('createCard', () => {
 });
 
 
-describe('anotherExample', () => {
+describe('otherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });

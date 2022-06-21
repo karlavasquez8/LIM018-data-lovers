@@ -28,8 +28,9 @@
       </div>
     </header>
     <main>
+
       <div class="wallpaper" >  
-       <div class="btn-fil-sort">
+       <div class="button-fil-sort">
          <div class="menu-contenedor">
           <nav>
             <ul class="menu-horizontal">
@@ -44,7 +45,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#">Estadisticas</a>
+                <a >Estadisticas</a>
                 <ul class="menu-vertical">
                   <li><a href="#">Victorias en Batallas</a></li>
                 </ul>
@@ -54,16 +55,46 @@
           </div>
           <div>
           </div>
-       </div>
+        </div>
         <div>
-          <div class="container-pokemon"></div>  
+         <div class="container-pokemon"></div>
         </div> 
+
       </div>
     </main>
     <footer class="writer">
       Realizado por Karla Vásquez y Rubis Rodríguez en Laboratoria
     </footer>
-    <div id="root"></div>
+
+    <section class="filter-sheet">
+      <div class="filter-modal">
+        <div class="modal">
+          <div class="title-modal">
+            <span class="material-symbols-outlined icon-filter">filter_alt</span>
+            <span> FILTROS</span>
+          </div>
+          <div id="filter-pokemons">
+            <span class="subtitle-modal">TIPO</span>
+              <div class="scroll type">
+                <button class="filter-option"></button>
+              </div>
+            <span class="subtitle-modal">RESISTENCIA</span>
+              <div class="scroll resistant">
+                <button class="filter-option"></button>
+              </div>
+            <span class="subtitle-modal ">DEBILIDAD</span>
+              <div class="scroll weaknesses">
+                <button class="filter-option"></button>
+              </div>
+          </div>
+          <button type="button" class="btn-close-filter">Cerrar</button>
+        </div>
+
+
+      </div>
+
+    </section>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>
