@@ -15,6 +15,7 @@ const pokemonAsc = [...data.pokemon]
 document.querySelector(".btn-sort-asc").addEventListener("click", () => {
     container.innerHTML = ordenarAz(pokemonAsc);
 });
+
 //ordenando en forma  decendiente de Z a la A
 
 const pokemonsDes = [...data.pokemon]
@@ -34,7 +35,7 @@ function addModalFilter(){
     const containerOptionType = document.querySelector(".type");
     const myFilterTypes = types.map((type) => createButton(type) );
     containerOptionType.innerHTML = myFilterTypes.join("");
-
+  
     const containerOptionResistant =document.querySelector(".resistant");
     const myFiltersResistant = resistants.map((resistant) => createButton(resistant) );
     containerOptionResistant.innerHTML=myFiltersResistant.join("");
@@ -69,3 +70,4 @@ function closeModal (){
 // }
 
 // carType.appendChild(createCarType);
+
