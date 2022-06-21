@@ -24,7 +24,7 @@ document.querySelector(".btn-sort-desc").addEventListener("click", () => {
   container.innerHTML = ordenarZa(pokemonsDes)
 });
 
-// creando eventos para filtrar
+// creando eventos para agregar la descripcion a los botones del modal de filtrado, ya sea por tipo, resistencia o debilidad
 
 const filter = document.querySelector('.btn-filter');
 filter.addEventListener("click",addModalFilter)
@@ -47,7 +47,7 @@ function addModalFilter(){
     const openModal = document.querySelector(".filter-sheet");
     openModal.classList.add("show-filter");
 }
-//filtrados por botones
+//agregando el filtrado mediante propagacion de eventos
 const divFilter= document.querySelector("#filter-pokemons");
 
 divFilter.addEventListener("click",(event)=>{
@@ -80,9 +80,7 @@ function closeModal (){
 
 //se utiliza el objeto getFiltersItems que viene desde el data exportado con el getPokemonType que 
 //es una funcion que tiene como argumento el data.pokemon ya que se esta trayendo ess datos del archivo pokemon.js
- //console.log (filtersItems.getFiltersItems(data.pokemon)) 
 
-// const buttonFilter= document.querySelector(".btn-meniFil");
-// buttonFilter.addEventListener("click",pokemonType)
+
 
 
