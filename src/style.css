@@ -8,6 +8,7 @@ body{
     margin:0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    color: #FFFFFF;
 }
 
 .flex{
@@ -169,7 +170,6 @@ body{
 
 .data-pokemon{
     background:#05387E;
-    color: #FFFFFF;
     padding: 7px;
     display: flex;
     align-items: center;
@@ -253,5 +253,14 @@ body{
 
 .icon-filter{
     display: flex;
-
+}
+/* estilos del modal de filtrado */
+.message{
+    display: none;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.show-message{
+    display: flex;
 }
