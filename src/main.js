@@ -1,4 +1,4 @@
-import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats} from './data.js';
+import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats,filtrarSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Agregamos tarjetas de Pokemones
@@ -73,7 +73,6 @@ divFilter.addEventListener("click",(event)=>{
         messagePorcent.classList.add("show-message");
 
     };
-
 });
 //cerrar modal de filtrado
 const btnCloseFilter = document.querySelector('.btn-close-filter');
@@ -84,12 +83,36 @@ function closeModal (){
     btnClose.classList.remove("show-filter")
 }
 
-// calcular porcentajes de pokemones
-
-
 
 //se utiliza el objeto getFiltersItems que viene desde el data exportado con el getPokemonType que 
 //es una funcion que tiene como argumento el data.pokemon ya que se esta trayendo ess datos del archivo pokemon.js
+
+//Creando filtrado de busqueda
+
+// copiamos la data a una variable para poder manipularla en este caso pokemonSearch
+     const pokemonSearch = [...data.pokemon];
+
+const textoUsuario = document.querySelector("#btn-search");
+
+textoUsuario.addEventListener("keyup", (event) =>{
+    
+     let resultado = filtrarSearch(pokemonSearch, event.target.value);
+
+     const filterCard = resultado.map((pokemon) => createCard(pokemon) );
+     
+      container.innerHTML = filterCard.join("");
+
+      if(filterCard.length == 0){
+
+         return  container.innerHTML = `
+        <div> pokemon no encontrado...</div>
+        `
+      }
+});
+
+
+
+
 
 
 

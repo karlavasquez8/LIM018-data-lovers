@@ -121,3 +121,17 @@ export function computeStats (numPokemons, numTypes){
 
 
 
+//funcion para el buscador
+
+export function filtrarSearch(pokemons, name){
+ return pokemons.filter(pokemon =>pokemon.name.startsWith(name));
+}
+
+
+
+
+
+
+
+
+

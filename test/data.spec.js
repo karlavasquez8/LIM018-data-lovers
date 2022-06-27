@@ -1,6 +1,5 @@
-
-import { createCard, anotherExample } from '../src/data.js';
-
+import { createCard, ordenarAz} from '../src/data.js';
+//import data from '../src/data/pokemon/pokemon.js';
 
 describe('createCard', () => {
   it('is a function', () => {
@@ -29,13 +28,26 @@ describe('createCard', () => {
   });
 });
 
-
-describe('otherExample', () => {
+describe('ordenarAz', () => {
+ const pokemonAsc = [...data.pokemon]
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof ordenarAz).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns string', () => {
+   
+    pokemonAsc.sort((a, b)=>{
+      if(a.name < b.name){
+         return -1;
+      }
+      if (a.name > b.name){
+        return 1;
+      }
+         return 0;
+     }
+     );
+     const pokemonAz = pokemonAsc.map((nombreAz)=>createCard(nombreAz));
+     return pokemonAz.join('');
   });
+  expect(ordenarAz(pokemonAsc)).toMatchSnapshot()
 });
