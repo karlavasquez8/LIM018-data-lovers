@@ -109,4 +109,15 @@ export const filtersItems = {
   getFiltersItems,
 }
 
+// porcentaje de pokemones
+
+export function computeStats (numPokemons, numTypes){
+  return (numTypes * 100 / numPokemons).toFixed(2);
+}
+//estaa funcinon me retorna un numero)
+
+
+
+
+
 

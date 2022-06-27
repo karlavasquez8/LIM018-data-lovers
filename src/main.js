@@ -1,4 +1,4 @@
-import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton} from './data.js';
+import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Agregamos tarjetas de Pokemones
@@ -53,18 +53,27 @@ const divFilter= document.querySelector("#filter-pokemons");
 divFilter.addEventListener("click",(event)=>{
     if(event.target.classList.contains("filter-option")){
         let pokemonsFilters;
-        if(event.target.getAttribute("data-group")== "type"){  
-            pokemonsFilters = filters.filterType(data.pokemon,event.target.innerText);
+        let dataGroup= event.target.getAttribute("data-group");
+        if(dataGroup == "type"){  
+            pokemonsFilters = filters.filterType(data.pokemon, event.target.innerText);
         };
-        if(event.target.getAttribute("data-group")== "resistant"){
-            pokemonsFilters = filters.filterResistant(data.pokemon,event.target.innerText);
+        if(dataGroup == "resistant"){
+            pokemonsFilters = filters.filterResistant(data.pokemon, event.target.innerText);
         };
-        if(event.target.getAttribute("data-group")=="weaknesses"){
-            pokemonsFilters = filters.filterWeaknesses(data.pokemon,event.target.innerText);   
+        if(dataGroup == "weaknesses"){
+            pokemonsFilters = filters.filterWeaknesses(data.pokemon, event.target.innerText);   
         }
         let containerFilter = pokemonsFilters.map((pokemon) => createCard(pokemon))
         container.innerHTML =containerFilter.join("");
+
+        //se agrega la linea de codigo para mostrar el mensaje de porcentajes cuando se haga click
+        const messagePorcent= document.querySelector(".message");
+        let porcentage = computeStats(data.pokemon.length,pokemonsFilters.length)
+        messagePorcent.innerText=`EN EL MUNDO POKEMON EL ${porcentage}% DE TODOS LOS POKEMONES SON DE ${dataGroup.toUpperCase()} ${event.target.innerText.toUpperCase()}!!`;
+        messagePorcent.classList.add("show-message");
+
     };
+
 });
 //cerrar modal de filtrado
 const btnCloseFilter = document.querySelector('.btn-close-filter');
@@ -75,6 +84,7 @@ function closeModal (){
     btnClose.classList.remove("show-filter")
 }
 
+// calcular porcentajes de pokemones
 
 
 
