@@ -1,4 +1,4 @@
-import { createCard, ordenarAz} from '../src/data.js';
+import { createCard, ordenarAz,createButton} from '../src/data.js';
 //import data from '../src/data/pokemon/pokemon.js';
 
 describe('createCard', () => {
@@ -22,6 +22,19 @@ describe('createCard', () => {
       "type":[
           "grass",
           "poison"
+      ],
+      "resistant": [
+        "water",
+        "electric",
+        "grass",
+        "fighting",
+        "fairy"
+      ],
+      "weaknesses": [
+        "fire",
+        "ice",
+        "flying",
+        "psychic"
       ]}
     expect(createCard(pokemon)).toMatchSnapshot()
   
@@ -51,3 +64,14 @@ describe('ordenarAz', () => {
   });
   expect(ordenarAz(pokemonAsc)).toMatchSnapshot()
 });
+
+describe('createButton', () => {
+  it('is a function', () => {
+    expect(typeof createButton).toBe('function');
+  });
+
+  it('returns string', () => {
+    expect(createButton("grass","type")).toContain("grass");
+    expect(createButton("grass","type")).toContain("type");
+  });
+})
