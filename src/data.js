@@ -3,7 +3,7 @@ export const createCard = (pokemon) => {
   const {img, name, num, type,weaknesses,resistant } = pokemon;
   return `
       <section class="info-card-pokemon"> 
-      <div class="img-pokemon">
+      <div class="img-pokemon same-style">
         <img class="pokemon" src="${img}" loading="lazy">
       </div>
       <div class="data-pokemon">
@@ -53,7 +53,7 @@ export function ordenarZa(pokemonsDes){
 // botones del filtrado en modal
 export const createButton = (filters, group)=>{
   return `
-  <button class="filter-option" data-group="${group}">${filters}</button>
+  <button class="filter-option font-color" data-group="${group}">${filters}</button>
   `;
 }
 
@@ -116,7 +116,9 @@ export function computeStats (numPokemons, numTypes){
 }
 //estaa funcinon me retorna un numero)
 
-
+export function search (pokemons, name){
+return pokemons.filter((pokemon) => pokemon.name.startsWith(name)) 
+}
 
 
 

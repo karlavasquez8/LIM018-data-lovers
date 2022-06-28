@@ -56,10 +56,10 @@ divFilter.addEventListener("click",(event)=>{
         let dataGroup= event.target.getAttribute("data-group");
         if(dataGroup == "type"){  
             pokemonsFilters = filters.filterType(data.pokemon, event.target.innerText);
-        };
+        }
         if(dataGroup == "resistant"){
             pokemonsFilters = filters.filterResistant(data.pokemon, event.target.innerText);
-        };
+        }
         if(dataGroup == "weaknesses"){
             pokemonsFilters = filters.filterWeaknesses(data.pokemon, event.target.innerText);   
         }
@@ -71,9 +71,9 @@ divFilter.addEventListener("click",(event)=>{
         let porcentage = computeStats(data.pokemon.length,pokemonsFilters.length)
         messagePorcent.innerText=`EN EL MUNDO POKEMON EL ${porcentage}% DE TODOS LOS POKEMONES SON DE ${dataGroup.toUpperCase()} ${event.target.innerText.toUpperCase()}!!`;
         messagePorcent.classList.add("show-message");
-
-    };
+    }
 });
+
 //cerrar modal de filtrado
 const btnCloseFilter = document.querySelector('.btn-close-filter');
 btnCloseFilter.addEventListener("click",closeModal)
@@ -83,34 +83,34 @@ function closeModal (){
     btnClose.classList.remove("show-filter")
 }
 
-
 //se utiliza el objeto getFiltersItems que viene desde el data exportado con el getPokemonType que 
 //es una funcion que tiene como argumento el data.pokemon ya que se esta trayendo ess datos del archivo pokemon.js
 
-//Creando filtrado de busqueda
+//Creando buscador
 
+const pokemonSearch = [...data.pokemon];
 // copiamos la data a una variable para poder manipularla en este caso pokemonSearch
-     const pokemonSearch = [...data.pokemon];
 
-const textoUsuario = document.querySelector("#btn-search");
+const textUser = document.querySelector("#btn-search");
+textUser.addEventListener("keyup", (event) =>{
+    let result = filtrarSearch(pokemonSearch, event.target.value);
 
-textoUsuario.addEventListener("keyup", (event) =>{
-    
-     let resultado = filtrarSearch(pokemonSearch, event.target.value);
+    const filterCard = result.map((pokemon) => createCard(pokemon) );
+    container.innerHTML = filterCard.join("");
 
-     const filterCard = resultado.map((pokemon) => createCard(pokemon) );
-     
-      container.innerHTML = filterCard.join("");
-
-      if(filterCard.length == 0){
-
-         return  container.innerHTML = `
-        <div> pokemon no encontrado...</div>
+    if(filterCard.length == 0){
+        return  container.innerHTML = `
+        <section class="error-message same-style"> 
+            <div class="message-pikachu-sad">
+                <span> Pokemon no encontrado...!!</span>
+            </div>
+            <div class="same-style">
+                <img class="img-pikachu-message" src="./img/pikachu-sad.png" alt="Pikachu Llorando" loading="lazy">
+            </div>
+        </section>
         `
-      }
+    }
 });
-
-
 
 
 
