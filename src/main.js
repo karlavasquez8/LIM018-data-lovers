@@ -1,4 +1,4 @@
-import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats,filtrarSearch} from './data.js';
+import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Agregamos tarjetas de Pokemones
@@ -52,7 +52,9 @@ const divFilter= document.querySelector("#filter-pokemons");
 
 divFilter.addEventListener("click",(event)=>{
     if(event.target.classList.contains("filter-option")){
-        let pokemonsFilters;
+
+        let pokemonsFilters;  
+
         let dataGroup= event.target.getAttribute("data-group");
         if(dataGroup == "type"){  
             pokemonsFilters = filters.filterType(data.pokemon, event.target.innerText);
@@ -71,6 +73,7 @@ divFilter.addEventListener("click",(event)=>{
         let porcentage = computeStats(data.pokemon.length,pokemonsFilters.length)
         messagePorcent.innerText=`EN EL MUNDO POKEMON EL ${porcentage}% DE TODOS LOS POKEMONES SON DE ${dataGroup.toUpperCase()} ${event.target.innerText.toUpperCase()}!!`;
         messagePorcent.classList.add("show-message");
+
     }
 });
 

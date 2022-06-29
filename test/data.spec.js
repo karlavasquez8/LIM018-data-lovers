@@ -42,6 +42,7 @@ describe('createCard', () => {
 });
 
 describe('ordenarAz', () => {
+
   it('is a function', () => {
     expect(typeof ordenarAz).toBe('function');
   });
