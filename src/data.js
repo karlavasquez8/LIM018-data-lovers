@@ -116,9 +116,13 @@ export function computeStats (numPokemons, numTypes){
 }
 //estaa funcinon me retorna un numero)
 
+
 export function search (pokemons, name){
 return pokemons.filter((pokemon) => pokemon.name.startsWith(name)) 
 }
+
+
+
 
 
 

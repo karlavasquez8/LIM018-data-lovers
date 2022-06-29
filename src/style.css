@@ -9,6 +9,11 @@ body{
     margin:0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    color: #FFFFFF;
+}
+
+img{
+    max-width: 100%;
 }
 
 .flex{
@@ -32,6 +37,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .page-header--item-pikachu{
@@ -69,7 +75,7 @@ body{
 }
 
 .search input{
-   width: 240px;
+   width: 100%;
    height: 25px;
    padding: 0 20px;
    font-size: 18px;
@@ -102,9 +108,10 @@ body{
 }
 
 .menu-horizontal li a{
-    display: block;
+    display: flex;
     padding: 15px 20px;
     text-decoration: none;
+    justify-content: flex-start;
 }
 
 .menu-horizontal li:hover{
@@ -142,7 +149,7 @@ body{
 }
 
 .container-pokemon{
-    max-width: 850px;
+    max-width: 100%;
     display: flex;
     gap: 20px 50px;
     flex-wrap: wrap;
@@ -172,6 +179,7 @@ body{
 .pokemon{
     max-width: 120px;
     height: 120px;
+    display: flex;
 }
 
 .data-pokemon{
@@ -193,6 +201,28 @@ body{
 .name-pokemon{
     text-transform:uppercase;
 }
+
+@media (max-width:800px) {
+    .search input,
+    .info-card-pokemon{
+        width:90px;
+        font-size: 8px;
+    }
+    .menu-horizontal{
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width:600px){
+    .img-pokemon,
+    .pokemon,
+    .info-card-pokemon{
+        width:70px;
+        font-size: 6px;
+    }
+}
+
+
 
 /* estilos al footer */
 .writer{
@@ -270,23 +300,25 @@ body{
 .icon-filter{
     display: flex;
 }
+
 .subtitle-modal{
     display: flex;
     margin-top: 20px;
     margin-bottom:20px;
 }
+
 /* estilos del modal de filtrado */
 .message{
     display: none;
     align-content: center;
     justify-content: center;
     margin-top: 30px;
-    color: #043375;
-    font-weight: bold;
+
 }
 .show-message{
     display: flex;
 }
+
 .error-message{
     flex-direction: column;
     background-color: rgba(0, 0, 71, 0.4);
@@ -303,6 +335,7 @@ body{
 .img-pikachu-message{
     width:250px;
 }
+
 /* pantalla principal*/
 .index-main{
     height: calc(100vh - 75px);
@@ -324,7 +357,6 @@ body{
 
  .review{
      background-image: url("./img/fondo-reseña.png");
-     backdrop-filter: blur(5px);
      border-radius: 15px;
      margin: 40px;
      max-width: 60%;
@@ -355,3 +387,4 @@ body{
  .btn-pokebola:hover{
      transform: scale(1.5);
  }
+
