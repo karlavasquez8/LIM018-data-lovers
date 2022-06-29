@@ -7,11 +7,11 @@ export const createCard = (pokemon) => {
         <img class="pokemon" src="${img}" loading="lazy">
       </div>
       <div class="data-pokemon">
-        <span>${name}</span>
-        <span>${num}</span>
-        <span>Tipo: ${type.join(', ')} </span>
-        <span>Resistencia: ${resistant.join(', ')} </span>
-        <span>Debilidad: ${weaknesses.join(', ')} </span>
+        <span class="name-pokemon description-pokemon">${name}</span>
+        <span class="description-pokemon">${num}</span>
+        <span class="description-pokemon">Tipo: ${type.join(', ')} </span>
+        <span class="description-pokemon">Resistencia: ${resistant.join(', ')} </span>
+        <span class="description-pokemon">Debilidad: ${weaknesses.join(', ')} </span>
       </div>
     </section>
   `;

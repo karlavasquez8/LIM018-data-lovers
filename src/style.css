@@ -1,6 +1,7 @@
 header{
     background-color: #043375;
     position: fixed;
+    z-index: 2;
     width: 100%;
 }
 
@@ -40,9 +41,13 @@ body{
 }
 
 .btn-logo{
-   width: 80px;
+   width: 60px;
    padding:7px ;
    cursor: pointer;
+   transition:.10s ease-in-out
+}
+.btn-logo:hover{
+    transform: scale(1.5);
 }
 
 .pikachu-friends{
@@ -88,9 +93,6 @@ body{
 }
 
 /* estilos de los botones de filtrar, ordenar y estadistica */
-.button-fil-sort{
-    margin-top: 69px;
-}
 .menu-horizontal{
     list-style: none;
     display: flex;
@@ -135,6 +137,10 @@ body{
     padding: 15px 15px 15px 20px;
 }
 /* estilos al contenedor de tarjetas */
+.wrap-container{
+    margin-top: 130px;
+}
+
 .container-pokemon{
     max-width: 850px;
     display: flex;
@@ -148,18 +154,19 @@ body{
 /* estilos de las tarjetas de pokemones*/
 .info-card-pokemon{
     font-size: 12px;
-    cursor: pointer;
     max-width: 170px;
     width: 100%;
-    transition: transform 300ms ease-in-out;
+    transition: .300ms ease-in-out;
 }
 
 .info-card-pokemon:hover{
     transform: scale(1.3);
+    z-index: 1;
 }
 
 .img-pokemon{
-    background:#FFDA4E;
+    background:#e4e3dfd5;
+    backdrop-filter: blur(10px);
 }
 
 .pokemon{
@@ -173,6 +180,18 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    text-transform: capitalize;
+}
+.description-pokemon{
+    transition: .10ms ease-in-out;
+}
+.description-pokemon:hover{
+    color: #FFDA4E;
+}
+
+.name-pokemon{
+    text-transform:uppercase;
 }
 
 /* estilos al footer */
@@ -187,7 +206,7 @@ body{
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 69px;
+    top: 115px;
     display:none;
 }
 
@@ -271,6 +290,8 @@ body{
 .error-message{
     flex-direction: column;
     background-color: rgba(0, 0, 71, 0.4);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
     width: 40%;
     height: 500px;
 }
@@ -282,3 +303,55 @@ body{
 .img-pikachu-message{
     width:250px;
 }
+/* pantalla principal*/
+.index-main{
+    height: calc(100vh - 75px);
+}
+.wallpaper-index{
+    background-image: url("./img/fondo-pantalla-principal.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+ }
+
+ .container-index{
+     display: flex;
+     justify-content: flex-end;
+ }
+
+ .review{
+     background-image: url("./img/fondo-reseña.png");
+     backdrop-filter: blur(5px);
+     border-radius: 15px;
+     margin: 40px;
+     max-width: 60%;
+ }
+
+ h1,p{
+     text-align: center;
+     padding: 15px;
+ }
+
+ p{
+    text-align: justify;
+    font-size:20px;
+}
+
+ .link-gallery{
+     padding: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+ }
+ .btn-pokebola{
+     width: 50px;
+     padding: 7px;
+     cursor: pointer;
+     transition:.10s ease-in-out
+ }
+ .btn-pokebola:hover{
+     transform: scale(1.5);
+ }

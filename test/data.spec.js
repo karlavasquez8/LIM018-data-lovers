@@ -42,27 +42,13 @@ describe('createCard', () => {
 });
 
 describe('ordenarAz', () => {
- const pokemonAsc = [...data.pokemon]
   it('is a function', () => {
     expect(typeof ordenarAz).toBe('function');
   });
 
   it('returns string', () => {
-   
-    pokemonAsc.sort((a, b)=>{
-      if(a.name < b.name){
-         return -1;
-      }
-      if (a.name > b.name){
-        return 1;
-      }
-         return 0;
-     }
-     );
-     const pokemonAz = pokemonAsc.map((nombreAz)=>createCard(nombreAz));
-     return pokemonAz.join('');
+   expect(ordenarAz("pikachu")).toContain("pikachu");
   });
-  expect(ordenarAz(pokemonAsc)).toMatchSnapshot()
 });
 
 describe('createButton', () => {
@@ -74,4 +60,4 @@ describe('createButton', () => {
     expect(createButton("grass","type")).toContain("grass");
     expect(createButton("grass","type")).toContain("type");
   });
-})
+});
