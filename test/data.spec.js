@@ -1,4 +1,4 @@
-import { createCard, ordenarAz,createButton} from '../src/data.js';
+import { createCard,createButton, computeStats} from '../src/data.js';
 //import data from '../src/data/pokemon/pokemon.js';
 
 describe('createCard', () => {
@@ -40,25 +40,23 @@ describe('createCard', () => {
   
   });
 });
-
-describe('ordenarAz', () => {
-
-  it('is a function', () => {
-    expect(typeof ordenarAz).toBe('function');
-  });
-
-  it('returns string', () => {
-   expect(ordenarAz("pikachu")).toContain("pikachu");
-  });
-});
-
 describe('createButton', () => {
   it('is a function', () => {
     expect(typeof createButton).toBe('function');
   });
 
-  it('returns string', () => {
+  it('returns name Pokemon and group', () => {
     expect(createButton("grass","type")).toContain("grass");
     expect(createButton("grass","type")).toContain("type");
   });
 });
+
+describe('computeStats',() => {
+  it('is a function',() => {
+    expect (typeof computeStats).toBe('function');
+  });
+
+  it('returns numbers',()=>{
+    expect(computeStats("251","17").toBe('numbers'))
+  })
+})

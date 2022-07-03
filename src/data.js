@@ -18,7 +18,7 @@ export const createCard = (pokemon) => {
 };
 
 // ordenando alfabeticamente de la A a la Z.
-export function ordenarAz(pokemonAsc){
+export function sortByAz(pokemonAsc){
  const pokemonAz = pokemonAsc.sort((a, b)=>{
   if(a.name < b.name){
      return -1;
@@ -35,7 +35,7 @@ export function ordenarAz(pokemonAsc){
 }
 // ordenando de forma alfabetica de la Z a la A.
 
-export function ordenarZa(pokemonsDes){
+export function sortByZa(pokemonsDes){
  const pokemonZa = pokemonsDes.sort((a, b)=>{
       if(a.name > b.name){
           return -1;
@@ -48,6 +48,23 @@ export function ordenarZa(pokemonsDes){
     );
   const pokemonZaCards = pokemonZa.map((nombreZa)=>createCard(nombreZa));
   return pokemonZaCards.join('');
+}
+
+export function sortBy(pokemons, order){
+  const sortPokemons = pokemons.sort((a, b)=>{
+    const conditionalOne = order == "desc"? a.name > b.name : a.name < b.name;
+    const conditionalTwo = order == "desc"? a.name < b.name : a.name > b.name;
+    if(conditionalOne){
+      return -1;
+    }
+    if (conditionalTwo) {
+      return 1;
+    }
+  return 0;
+  }
+ );
+
+ return sortPokemons;
 }
 
 // botones del filtrado en modal
@@ -112,28 +129,15 @@ export const filtersItems = {
 // porcentaje de pokemones
 
 export function computeStats (numPokemons, numTypes){
-  return (numTypes * 100 / numPokemons).toFixed(2);
+   return parseFloat((numTypes * 100 / numPokemons).toFixed(2));
 }
-//estaa funcinon me retorna un numero)
-
-
-export function search (pokemons, name){
-return pokemons.filter((pokemon) => pokemon.name.startsWith(name)) 
-}
-
-
-
-
-
-
+//esta funcion me retorna un numero pero con el toFixed le convierte en un string)
 
 //funcion para el buscador
 
 export function filtrarSearch(pokemons, name){
  return pokemons.filter(pokemon =>pokemon.name.startsWith(name));
 }
-
-
 
 
 

@@ -97,6 +97,10 @@ img{
    min-height: 500px;
    width: 100%;
 }
+.hidden-scroll{
+    overflow: hidden;
+    position: fixed;
+}
 
 /* estilos de los botones de filtrar, ordenar y estadistica */
 .menu-horizontal{
@@ -219,7 +223,7 @@ img{
 }
 
 .filter-modal {
-    background-color: #1059AB;
+    background-color:#1059AB;
     height: 100%;
     max-width: 300px;;
 }
@@ -229,11 +233,10 @@ img{
 }
 
 .modal{
-    width: 150px;
+    width: 200px;
     font-size: 16px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
 }
 
 .scroll{
@@ -242,8 +245,10 @@ img{
     flex-direction: column;
     align-items: flex-start;
     overflow-y: scroll;
-    height: 100px;
-    margin-top: 10px;
+    height: 130px;
+    margin-top: 7px;
+    border: 1px solid #3988dc;
+    padding: 5px;
 }
 
 .filter-option{
@@ -279,10 +284,15 @@ img{
     display: flex;
 }
 
+.title-modal{
+    display: flex;
+    margin-top: 5px;
+
+}
+
 .subtitle-modal{
     display: flex;
-    margin-top: 20px;
-    margin-bottom:20px;
+    margin: 10px 0 10px 0;
 }
 
 /* estilos del modal de filtrado */
@@ -334,7 +344,7 @@ img{
  }
 
  .review{
-     background:#043375;
+     background: #05387E;
      border-radius: 15px;
      margin: 40px;
      max-width: 60%;
@@ -366,103 +376,3 @@ img{
      transform: scale(1.5);
  }
 
- @media(max-width:850px){
-    .review{
-        width: 40%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    h1,p{
-        text-align: center;
-        font-size: 15px;
-    }
-   
-    p{
-       text-align: justify;
-       font-size:12px;
-       padding: 12px;
-   }
-}
-
- @media (max-width:800px) {
-    .search input{
-        height: 30px;
-        width: 60px;
-        font-size: 12px;
-    }
-    .info-card-pokemon{
-        width:90px;
-        font-size: 8px;
-    }
-    .menu-horizontal{
-        justify-content: center;
-    }
-    .message{
-        justify-content: center;
-        margin:5px;
-    }
-    .filter-modal{
-        width: 170px;
-    }
-    .error-message{
-        width: 20%;
-        height: 250px;
-    }
-    .img-pikachu-message{
-        width: 120px;
-    }
-    .message-pikachu-sad{
-        width: 80px;
-        font-size: medium;
-    }
-    
-}
-
-@media(max-width:600px){
-    .img-pokemon,
-    .pokemon,
-    .info-card-pokemon{
-        width:70px;
-        height:10;
-        font-size: 6px;
-    }
-    .filter-modal{
-        width: 130px;
-    }
-    .search input{
-        height: 17px;
-        font-size: 10px;
-    }
-    .error-message{
-        width: 30%;
-        height: 180px;
-    }
-    .img-pikachu-message{
-        width: 70px;
-    }
-    .message-pikachu-sad{
-        width: 80px;
-        font-size: 0.5em;
-    } 
-}
-@media(max-width:400px){
-    .review{
-        width: 35%;
-        height: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    h1,p{
-        text-align: center;
-        font-size: 10px;
-    }
-   
-    p{
-       text-align: justify;
-       font-size:8px;
-       padding: 6px;
-   }
-   .link-gallery{
-    font-size: 10px;
-   }
-}

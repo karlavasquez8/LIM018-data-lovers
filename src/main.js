@@ -1,48 +1,57 @@
-import { createCard, ordenarAz,ordenarZa,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
+import { createCard, sortBy, sortByAz,sortByZa,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
+function fillPokemons(pokemons){
+    let cardsPokemons = pokemons.map((pokemon) => createCard(pokemon))
+    container.innerHTML =cardsPokemons.join("");
+}
 //Agregamos tarjetas de Pokemones
 const container = document.querySelector('.container-pokemon');
-
-const myPokemons = data.pokemon.map((pokemon) => createCard(pokemon) );
-
-container.innerHTML = myPokemons.join("");
+fillPokemons(data.pokemon)
 //se agrega el join para convertirlo  un string, porque la iteracion del map devuelve un array
 
- //ordenando  de forma ascendente. de A a la Z
-const pokemonAsc = [...data.pokemon]
+ //ordenando pokemones
+let pokemons = [...data.pokemon]
 
 document.querySelector(".btn-sort-asc").addEventListener("click", () => {
-    container.innerHTML = ordenarAz(pokemonAsc);
+    const pokemonSortAsc = sortBy(pokemons, 'asc');
+    fillPokemons(pokemonSortAsc);
 });
-
-//ordenando en forma  decendiente de Z a la A
-
-const pokemonsDes = [...data.pokemon]
   
 document.querySelector(".btn-sort-desc").addEventListener("click", () => {
-  container.innerHTML = ordenarZa(pokemonsDes)
+    const pokemonSortDes = sortBy(pokemons, 'desc');
+    fillPokemons(pokemonSortDes);
 });
 
 // creando eventos para agregar la descripcion a los botones del modal de filtrado, ya sea por tipo, resistencia o debilidad
 
+//descativando y activando scroll
+function blockScroll() {
+    document.querySelector(".wallpaper").classList.add("hidden-scroll")
+}
+function activateScroll() {
+    document.querySelector(".wallpaper").classList.remove("hidden-scroll")
+}
+function hiddenMessage() {
+    document.querySelector(".message").classList.remove("show-message")
+}
+// para optimizar ya que el codigo se repite para el filtrado de tipo, resistencia y debilidad
+function fillFilters(listFilter, selector, filterType) {
+    const myFilter = listFilter.map((textFilter) => createButton(textFilter, filterType) );
+    const containerOption = document.querySelector(selector);
+    containerOption.innerHTML = myFilter.join("");
+}
 const filter = document.querySelector('.btn-filter');
-filter.addEventListener("click",addModalFilter)
+filter.addEventListener("click",addModalFilter);
 
 function addModalFilter(){
-    const { types,resistant:resistants, weaknesses } = filtersItems.getFiltersItems(data.pokemon);
+    blockScroll();
 
-    const containerOptionType = document.querySelector(".type");
-    const myFilterTypes = types.map((type) => createButton(type, "type") );
-    containerOptionType.innerHTML = myFilterTypes.join("");
-  
-    const containerOptionResistant =document.querySelector(".resistant");
-    const myFiltersResistant = resistants.map((resistant) => createButton(resistant, "resistant") );
-    containerOptionResistant.innerHTML=myFiltersResistant.join("");
+    const { types, resistant:resistants, weaknesses } = filtersItems.getFiltersItems(data.pokemon);
 
-    const containerOptionWeaknesses =  document.querySelector(".weaknesses")
-    const myFilterWeaknesse = weaknesses.map((weaknesses)=> createButton(weaknesses, "weaknesses"));
-    containerOptionWeaknesses.innerHTML= myFilterWeaknesse.join("");
+    fillFilters(types, ".type", "type");
+    fillFilters(resistants, ".resistant", "resistant");
+    fillFilters(weaknesses, ".weaknesses", "weaknesses");
 
     const openModal = document.querySelector(".filter-sheet");
     openModal.classList.add("show-filter");
@@ -65,8 +74,7 @@ divFilter.addEventListener("click",(event)=>{
         if(dataGroup == "weaknesses"){
             pokemonsFilters = filters.filterWeaknesses(data.pokemon, event.target.innerText);   
         }
-        let containerFilter = pokemonsFilters.map((pokemon) => createCard(pokemon))
-        container.innerHTML =containerFilter.join("");
+        fillPokemons(pokemonsFilters);
 
         //se agrega la linea de codigo para mostrar el mensaje de porcentajes cuando se haga click
         const messagePorcent= document.querySelector(".message");
@@ -77,13 +85,14 @@ divFilter.addEventListener("click",(event)=>{
     }
 });
 
-//cerrar modal de filtrado
-const btnCloseFilter = document.querySelector('.btn-close-filter');
-btnCloseFilter.addEventListener("click",closeModal)
+//cerrar modal de filtrado 
+const closeFilter = document.querySelector(".filter-sheet");
+closeFilter.addEventListener("click",closeModal)
 
 function closeModal (){
-    const btnClose = document.querySelector(".filter-sheet");
-    btnClose.classList.remove("show-filter")
+    activateScroll();
+    const close = document.querySelector(".filter-sheet");
+    close.classList.remove("show-filter")
 }
 
 //se utiliza el objeto getFiltersItems que viene desde el data exportado con el getPokemonType que 
@@ -96,12 +105,13 @@ const pokemonSearch = [...data.pokemon];
 
 const textUser = document.querySelector("#btn-search");
 textUser.addEventListener("keyup", (event) =>{
+    hiddenMessage();
+    
     let result = filtrarSearch(pokemonSearch, event.target.value);
 
-    const filterCard = result.map((pokemon) => createCard(pokemon) );
-    container.innerHTML = filterCard.join("");
+    fillPokemons(result);
 
-    if(filterCard.length == 0){
+    if(result.length == 0){
         return  container.innerHTML = `
         <section class="error-message same-style"> 
             <div class="message-pikachu-sad">
