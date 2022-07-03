@@ -1,12 +1,13 @@
-import { createCard,createButton, computeStats} from '../src/data.js';
+import { describe, it } from 'eslint/lib/rule-tester/rule-tester';
+import { createCard,createButton, computeStats, sortByAz} from '../src/data.js';
 //import data from '../src/data/pokemon/pokemon.js';
 
 describe('createCard', () => {
-  it('is a function', () => {
+  it('should by a function', () => {
     expect(typeof createCard).toBe('function');
   });
 
-  it('returns string', () => {
+  it('should return a pokemon card', () => {
     const pokemon = {
       "num": "001",
       "name": "bulbasaur",
@@ -40,23 +41,31 @@ describe('createCard', () => {
   
   });
 });
+describe('sortByAz',() =>{
+  it('should by a function',() =>{
+    expect(typeof sortByAz).toBe('function');
+  });
+
+  it('')
+})
+
 describe('createButton', () => {
-  it('is a function', () => {
+  it('should by a function', () => {
     expect(typeof createButton).toBe('function');
   });
 
-  it('returns name Pokemon and group', () => {
+  it('should returns name Pokemon and group', () => {
     expect(createButton("grass","type")).toContain("grass");
     expect(createButton("grass","type")).toContain("type");
   });
 });
 
 describe('computeStats',() => {
-  it('is a function',() => {
+  it('should by a function',() => {
     expect (typeof computeStats).toBe('function');
   });
 
-  it('returns numbers',()=>{
-    expect(computeStats("251","17").toBe('numbers'))
+  it('should return a calculation',()=>{
+    expect(computeStats(251,17)).toBe(6.77)
   })
 })

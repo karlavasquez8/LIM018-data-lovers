@@ -51,13 +51,7 @@
 }
 
 @media(max-width:600px){
-    .img-pokemon,
-    .pokemon,
-    .info-card-pokemon{
-        width:70px;
-        height:10;
-        font-size: 6px;
-    }
+
     .filter-modal{
         width: 130px;
     }

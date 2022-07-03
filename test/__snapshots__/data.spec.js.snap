@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createCard returns string 1`] = `
+exports[`createCard should return a pokemon card 1`] = `
 "
       <section class=\\"info-card-pokemon\\"> 
-      <div class=\\"img-pokemon\\">
+      <div class=\\"img-pokemon same-style\\">
         <img class=\\"pokemon\\" src=\\"https://www.serebii.net/pokemongo/pokemon/001.png\\" loading=\\"lazy\\">
       </div>
       <div class=\\"data-pokemon\\">
-        <span>bulbasaur</span>
-        <span>001</span>
-        <span>Tipo: grass, poison </span>
-        <span>Resistencia: water, electric, grass, fighting, fairy </span>
-        <span>Debilidad: fire, ice, flying, psychic </span>
+        <span class=\\"name-pokemon description-pokemon\\">bulbasaur</span>
+        <span class=\\"description-pokemon\\">001</span>
+        <span class=\\"description-pokemon\\">Tipo: grass, poison </span>
+        <span class=\\"description-pokemon\\">Resistencia: water, electric, grass, fighting, fairy </span>
+        <span class=\\"description-pokemon\\">Debilidad: fire, ice, flying, psychic </span>
       </div>
     </section>
   "
