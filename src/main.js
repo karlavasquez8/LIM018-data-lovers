@@ -1,4 +1,4 @@
-import { createCard, sortBy, sortByAz,sortByZa,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
+import { createCard, sortBy,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 function fillPokemons(pokemons){
@@ -81,7 +81,6 @@ divFilter.addEventListener("click",(event)=>{
         let porcentage = computeStats(data.pokemon.length,pokemonsFilters.length)
         messagePorcent.innerText=`EN EL MUNDO POKEMON EL ${porcentage}% DE TODOS LOS POKEMONES SON DE ${dataGroup.toUpperCase()} ${event.target.innerText.toUpperCase()}!!`;
         messagePorcent.classList.add("show-message");
-
     }
 });
 
@@ -94,17 +93,13 @@ function closeModal (){
     const close = document.querySelector(".filter-sheet");
     close.classList.remove("show-filter")
 }
-
-//se utiliza el objeto getFiltersItems que viene desde el data exportado con el getPokemonType que 
-//es una funcion que tiene como argumento el data.pokemon ya que se esta trayendo ess datos del archivo pokemon.js
-
 //Creando buscador
 
 const pokemonSearch = [...data.pokemon];
 // copiamos la data a una variable para poder manipularla en este caso pokemonSearch
 
 const textUser = document.querySelector("#btn-search");
-textUser.addEventListener("keyup", (event) =>{
+textUser.addEventListener("keyup", (event) => {
     hiddenMessage();
     
     let result = filtrarSearch(pokemonSearch, event.target.value);
