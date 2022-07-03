@@ -16,40 +16,6 @@ export const createCard = (pokemon) => {
     </section>
   `;
 };
-
-// ordenando alfabeticamente de la A a la Z.
-export function sortByAz(pokemonAsc){
- const pokemonAz = pokemonAsc.sort((a, b)=>{
-  if(a.name < b.name){
-     return -1;
-  }
-  if (a.name > b.name){
-    return 1;
-  }
-     return 0;
- }
- );
-
- const pokemonAzCards = pokemonAz.map((nombreAz)=>createCard(nombreAz));
- return pokemonAzCards.join('');
-}
-// ordenando de forma alfabetica de la Z a la A.
-
-export function sortByZa(pokemonsDes){
- const pokemonZa = pokemonsDes.sort((a, b)=>{
-      if(a.name > b.name){
-          return -1;
-       }
-       if(a.name < b.name){
-          return 1;
-       }
-          return 0;
-    }
-    );
-  const pokemonZaCards = pokemonZa.map((nombreZa)=>createCard(nombreZa));
-  return pokemonZaCards.join('');
-}
-
 export function sortBy(pokemons, order){
   const sortPokemons = pokemons.sort((a, b)=>{
     const conditionalOne = order == "desc"? a.name > b.name : a.name < b.name;
@@ -63,7 +29,6 @@ export function sortBy(pokemons, order){
   return 0;
   }
  );
-
  return sortPokemons;
 }
 
