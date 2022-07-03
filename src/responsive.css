@@ -1,0 +1,94 @@
+@media(max-width:850px){
+    .review{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1,p{
+        text-align: center;
+        font-size: 15px;
+    }
+   
+    p{
+       text-align: justify;
+       font-size:12px;
+       padding: 12px;
+   }
+}
+
+ @media (max-width:800px) {
+    .search input{
+        height: 30px;
+        width: 60px;
+        font-size: 12px;
+    }
+    .info-card-pokemon{
+        width:90px;
+        font-size: 8px;
+    }
+    .menu-horizontal{
+        justify-content: center;
+    }
+    .message{
+        justify-content: center;
+        margin:5px;
+    }
+    .filter-modal{
+        width: 170px;
+    }
+    .error-message{
+        width: 20%;
+        height: 250px;
+    }
+    .img-pikachu-message{
+        width: 120px;
+    }
+    .message-pikachu-sad{
+        width: 80px;
+        font-size: medium;
+    }
+    
+}
+
+@media(max-width:600px){
+
+    .filter-modal{
+        width: 130px;
+    }
+    .search input{
+        height: 17px;
+        font-size: 10px;
+    }
+    .error-message{
+        width: 30%;
+        height: 180px;
+    }
+    .img-pikachu-message{
+        width: 70px;
+    }
+    .message-pikachu-sad{
+        width: 80px;
+        font-size: 0.5em;
+    } 
+}
+@media(max-width:400px){
+    .review{
+        width: 35%;
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1,p{
+        text-align: center;
+        font-size: 10px;
+    }
+   
+    p{
+       text-align: justify;
+       font-size:8px;
+       padding: 6px;
+   }
+   .link-gallery{
+    font-size: 10px;
+   }
+}
