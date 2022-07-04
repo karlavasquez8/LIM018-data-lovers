@@ -5,6 +5,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     h1,p{
         text-align: center;
         font-size: 15px;
@@ -16,8 +17,7 @@
        padding: 12px;
    }
 }
-
- @media (max-width:800px) {
+@media (max-width:800px) {
 
     body{
         font-size: 14px;
@@ -30,24 +30,25 @@
         justify-content: center;
     }
     .message{
-        justify-content: center;
+        text-align: center;
         margin:5px;
     }
     .filter-modal{
         width: 170px;
     }
     .error-message{
-        width: 20%;
-        height: 250px;
+        width: 30%;
+        height: 300px;
+        display: flex;
+        align-items: center;
     }
     .img-pikachu-message{
-        width: 120px;
+        width: 150px;
     }
     .message-pikachu-sad{
         width: 80px;
         font-size: medium;
-    }
-    
+    } 
 }
 
 @media(max-width:600px){
@@ -57,7 +58,7 @@
         padding: 15px;
     }
     .filter-sheet{
-        top: 112px;
+        top: 104px;
     }
     .search input{
         height: 17px;
@@ -77,7 +78,7 @@
         font-size: 1em;
     } 
     .scroll{
-     height: 180px;   
+     height: 115px;   
     }
     .search{
         height: 20px;
@@ -93,6 +94,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     h1,p{
         text-align: center;
         font-size: 12px;
@@ -103,28 +105,36 @@
        font-size:12px;
        padding: 6px;
    }
+
    .link-gallery{
     font-size: 10px;
    }
+
    .search{
        height: 20px;
        width: 160px;
    }
+
    .pikachu-friends{
        width: 100px;
    }
+
    .filter-sheet{
-       top: 102px;
+       top: 100px;
    }
+
    .subtitle-modal{
        font-size: 14px;
    }
+
    .scroll{
-    height: 115px;   
+    height: 98px;   
    }
+
    .pokemon{
        height: 100px;
    }
+
    .info-card-pokemon{
        width: 120px;
    }
