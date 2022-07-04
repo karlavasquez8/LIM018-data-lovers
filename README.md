@@ -20,12 +20,17 @@
   ![galeria de pokemones desktop](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/galeryPokemons.png)
 
 ## RESPONSIVE
-![mobile Iphone X](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobileix.png)
-![mobile Iphone X](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile375.png)
-![mobile 412 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile412.png)
-![mobile 414 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile414.png)
-![mobile 768 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobilr768.png)
-![mobile Ipad 1024 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/ipad1024.png)
+  ![mobile Iphone X](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobileix.png)
+
+  ![mobile Iphone X](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile375.png)
+
+  ![mobile 412 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile412.png)
+
+  ![mobile 414 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobile414.png)
+
+  ![mobile 768 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/mobilr768.png)
+  
+  ![mobile Ipad 1024 px](https://github.com/karlavasquez8/LIM018-data-lovers/blob/main/img_readme/ipad1024.png)
 
 ## Historias de Usuarios
 
