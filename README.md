@@ -1,5 +1,54 @@
 # Data Lovers
+## Conoce tus Pokemones
+¿A quienes esta dirigido el proyecto?
+* Nuestro proyecto permite a los entrenadores pokemons buscar   informacion respecto a las caracteristicas , el porcentaje , asi como el tipo, la resistencia y la debilidad de cada pokemon.
 
+[Prototipo Figma](https://www.figma.com/file/ZvqJzkemUeH4SDvCGwI9oq/Proyectos-laboratoria?node-id=2572%3A24)
+
+## Historias de Usuarios
+1. Mostrar todos los pokemones
+* Yo como maestro pokemon quiero ver todos los pokemones en galeria para saber que caracteristicas tienen:
+* Criterios de aceptacion:
+ - [✔️] Se debe mostrar en la pagina a todos los pokemones con sus respectivos datos, tales como su nombre, numero, tipo, resistencia y debilidades.
+ - [✔️] Debe ser responsive.
+
+2. Ordenar Pokemones
+* Yo como maestro pokemon quiero ordenar los pokemones de manera ascendente y descendente por su nombre.
+* Criterios de aceptacion
+- [✔️] Se debe permitir ordenar de A-Z y de la Z-A.
+- [✔️]El maestro debe poder seleccionar el orden que desee.
+- [✔️]Debe ser responsive.
+
+3. Filtrar Pokemones
+* Yo como maestro pokemon quiero filtrar los pokemones para poder agruparos segun su tipo, resistencia, y debilidad.
+* Criterios de aceptacion
+- [✔️] Se debe permitir filtrar de acuerdo al tipo, debilidad y resistencia
+- [✔️]El maestro debe poder seleccionar el orden que desee.
+- [✔️]Debe ser responsive.
+
+4. Porcentaje de pokemones por el tipo, resistencia y debilidad.
+* Yo como maestro pokemon quiero visualizar el porcentaje de los pokemones de acuerdo al filtrado.
+* Criterios de aceptacion
+- [✔️] Se debe calcular el porcentaje de pokemones de acuerdo al tipo, debilidad y resistencia.
+- [✔️]Debe ser responsive.
+
+:Todas las funciones deben pasar el test unitario.
+
+## PROTOTIPOS DE BAJA FIDELIDAD
+* Movile
+![galeria de pokemones mobile](galeria-mobile-jpeg)
+![ordenar pokemones mobile](ordenar-mobile-jpeg)
+![filtrar de pokemones mobile](filtrar-mobile-jpeg)
+* Desktop
+![primera pantalla de pokemones desktop](primera-pantalla.png)
+![galeria de pokemones desktop](galeryPokemons.png)
+![filtrado de pokemones desktop](filtrar-desktop.png)
+
+
+
+
+
+## Resumen
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
