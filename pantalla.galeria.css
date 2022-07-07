@@ -1,0 +1,328 @@
+header{
+    background-color: #043375;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+body{
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+img{
+    max-width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+ .flex-mind{
+     flex: 1;
+}
+.same-style{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.font-color{
+    color: #FFFFFF;
+}
+
+/* estilos de encabezado*/
+.page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.page-header--item-pikachu{
+   display: flex;
+   align-items: center;
+   justify-content: end;
+}
+
+.btn-logo{
+   width: 60px;
+   padding:7px ;
+   cursor: pointer;
+   transition:.10s ease-in-out
+}
+.btn-logo:hover{
+    transform: scale(1.5);
+}
+
+.pikachu-friends{
+   width: 130px;
+   padding: 7px;
+}
+
+.search{
+   background: #FFFFFF;
+   border: 1px solid silver;
+   border-radius: 10px;
+   padding: 7px;
+   height: 30px;
+}
+
+.btn-search{
+   text-align: center;
+   color: rgb(119, 119, 119);
+}
+
+.search input{
+   width: 100%;
+   height: 25px;
+   padding: 0 20px;
+   font-size: 18px;
+   color:black;
+   outline: none;
+   border: 0;
+}
+
+/* estilos al fondo de la galeria */
+.wallpaper{
+   background-image: url("./img/fondo-pantalla.jpeg");
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   min-height: 500px;
+   width: 100%;
+}
+.hidden-scroll{
+    overflow: hidden;
+    position: fixed;
+}
+
+/* estilos de los botones de filtrar, ordenar y estadistica */
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #166ECB;
+    margin: 0;
+}
+
+.menu-horizontal li a{
+    display: flex;
+    padding: 15px 20px;
+    text-decoration: none;
+    justify-content: flex-start;
+}
+
+.menu-horizontal li:hover{
+    background:#1059AB;
+}
+
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color:#166ECB;
+    padding: 0;
+}
+
+.menu-vertical li {
+    padding: 10px;
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+
+.menu-vertical li:hover{
+    background-color: #043375;
+}
+
+.menu-vertical li a{
+    display: block;
+    padding: 15px 15px 15px 20px;
+}
+/* estilos al contenedor de tarjetas */
+.wrap-container{
+    margin-top: 130px;
+}
+
+.container-pokemon{
+    max-width: 80%;
+    display: flex;
+    gap: 20px 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 70px;
+    margin: auto;
+    min-height: calc(100vh - 118.2px);
+}
+/* estilos de las tarjetas de pokemones*/
+.info-card-pokemon{
+    font-size: 12px;
+    max-width: 170px;
+    min-width: min-content;
+    width: 100%;
+    transition: .300ms ease-in-out;
+}
+
+.info-card-pokemon:hover{
+    transform: scale(1.3);
+    z-index: 1;
+}
+
+.img-pokemon{
+    background:#e4e3dfd5;
+    backdrop-filter: blur(10px);
+}
+
+.pokemon{
+    max-width: 120px;
+    height: 120px;
+    display: flex;
+}
+
+.data-pokemon{
+    background:#05387E;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: capitalize;
+}
+.description-pokemon{
+    transition: .10ms ease-in-out;
+}
+.description-pokemon:hover{
+    color: #FFDA4E;
+}
+
+.name-pokemon{
+    text-transform:uppercase;
+}
+
+/* estilos al footer */
+.writer{
+    color:#FFFFFF;
+    text-align: center;
+    padding: 28px 0px;
+    background-color: #074b95;
+}
+/* estilos del modal de filtrado */
+.filter-sheet{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 115px;
+    display:none;
+}
+
+.filter-modal {
+    background-color:#1059AB;
+    height: 100%;
+    max-width: 300px;;
+}
+
+.show-filter{
+    display: block;
+}
+
+.modal{
+    width: 200px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    height: 130px;
+    margin-top: 7px;
+    border: 1px solid #3988dc;
+    padding: 5px;
+}
+
+.filter-option{
+    background-color: #1059AB;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    transition:.10s ease-in-out
+}
+.filter-option:hover{
+    color:#FFDA4E;
+}
+
+.btn-close-filter{
+    color: #4d4d4d;
+    background-color:#FFDA4E;
+    cursor: pointer;
+    border-radius:5px;
+    border:0px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 7px;
+    width: 100px;
+    transition:.10s ease-in-out
+}
+
+.btn-close-filter:hover{
+    background-color: #b90000;
+    color:#FFFFFF;
+}
+
+.icon-filter{
+    display: flex;
+}
+
+.title-modal{
+    display: flex;
+    margin-top: 5px;
+
+}
+
+.subtitle-modal{
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+/* estilos del modal de filtrado */
+.message{
+    display: none;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+.show-message{
+    display: flex;
+}
+
+.error-message{
+    flex-direction: column;
+    background-color: rgba(0, 0, 71, 0.4);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    width: 40%;
+    height: 500px;
+}
+.message-pikachu-sad{
+    color:#FFDA4E;
+    font-size: xx-large;
+    text-align: center;
+}
+.img-pikachu-message{
+    width:250px;
+}
+
+

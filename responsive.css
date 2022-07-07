@@ -1,0 +1,141 @@
+@media(max-width:850px){
+    .review{
+        width: 70%;
+        height:410px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1,p{
+        text-align: center;
+        font-size: 15px;
+    }
+   
+    p{
+       text-align: justify;
+       font-size:12px;
+       padding: 12px;
+   }
+}
+@media (max-width:800px) {
+
+    body{
+        font-size: 14px;
+    } 
+    .info-card-pokemon{
+        width:90px;
+        font-size: 10px;
+    }
+    .menu-horizontal{
+        justify-content: center;
+    }
+    .message{
+        text-align: center;
+        margin:5px;
+    }
+    .filter-modal{
+        width: 170px;
+    }
+    .error-message{
+        width: 30%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+    }
+    .img-pikachu-message{
+        width: 150px;
+    }
+    .message-pikachu-sad{
+        width: 80px;
+        font-size: medium;
+    } 
+}
+
+@media(max-width:600px){
+
+    .filter-modal{
+        width: 130px;
+        padding: 15px;
+    }
+    .filter-sheet{
+        top: 104px;
+    }
+    .search input{
+        height: 17px;
+        font-size: 10px;
+    }
+    .error-message{
+        width: 90%;
+        height: 240px;
+        display: flex;
+        align-items: center;
+    }
+    .img-pikachu-message{
+        width: 110px;
+    }
+    .message-pikachu-sad{
+        width: 80px;
+        font-size: 1em;
+    } 
+    .scroll{
+     height: 115px;   
+    }
+    .search{
+        height: 20px;
+    }
+    .pikachu-friends{
+        width: 112px;
+    }
+}
+@media(max-width:400px){
+    .review{
+        width: 70%;
+        height: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1,p{
+        text-align: center;
+        font-size: 12px;
+    }
+   
+    p{
+       text-align: justify;
+       font-size:12px;
+       padding: 6px;
+   }
+
+   .link-gallery{
+    font-size: 10px;
+   }
+
+   .search{
+       height: 20px;
+       width: 160px;
+   }
+
+   .pikachu-friends{
+       width: 100px;
+   }
+
+   .filter-sheet{
+       top: 100px;
+   }
+
+   .subtitle-modal{
+       font-size: 14px;
+   }
+
+   .scroll{
+    height: 98px;   
+   }
+
+   .pokemon{
+       height: 100px;
+   }
+
+   .info-card-pokemon{
+       width: 120px;
+   }
+}
