@@ -1,4 +1,4 @@
-// datos de la tarjeta. creacion de la tarjeta
+// datos de la tarjeta
 export const createCard = (pokemon) => {
   const {img, name, num, type,weaknesses,resistant } = pokemon;
   return `
@@ -16,8 +16,6 @@ export const createCard = (pokemon) => {
     </section>
   `;
 };
-
-// funcion para ordenar por nombre
 export function sortBy(pokemons, order){
   const sortPokemons = pokemons.sort((a, b)=>{
     const conditionalOne = order == "desc"? a.name > b.name : a.name < b.name;
@@ -93,15 +91,11 @@ export const filtersItems = {
   getFiltersItems,
 }
 
-// from crea un nuevo array y new set almacena valores
-
 // porcentaje de pokemones
 
 export function computeStats (numPokemons, numTypes){
    return parseFloat((numTypes * 100 / numPokemons).toFixed(2));
 }
-
-
 //esta funcion me retorna un numero pero con el toFixed le convierte en un string)
 
 //funcion para el buscador

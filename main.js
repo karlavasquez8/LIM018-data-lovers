@@ -1,12 +1,11 @@
 import { createCard, sortBy,filters, filtersItems, createButton,computeStats, filtrarSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//se itera el array y por cada pokemon se crea una tarjeta
 function fillPokemons(pokemons){
     let cardsPokemons = pokemons.map((pokemon) => createCard(pokemon))
     container.innerHTML =cardsPokemons.join("");
 }
-//Agregamos tarjetas al DOM
+//Agregamos tarjetas de Pokemones
 const container = document.querySelector('.container-pokemon');
 fillPokemons(data.pokemon)
 //se agrega el join para convertirlo  un string, porque la iteracion del map devuelve un array
@@ -29,7 +28,7 @@ document.querySelector(".btn-sort-desc").addEventListener("click", () => {
 //descativando y activando scroll
 function blockScroll() {
     document.querySelector(".wallpaper").classList.add("hidden-scroll")
-}
+} 
 function activateScroll() {
     document.querySelector(".wallpaper").classList.remove("hidden-scroll")
 }
@@ -42,14 +41,13 @@ function fillFilters(listFilter, selector, filterType) {
     const containerOption = document.querySelector(selector);
     containerOption.innerHTML = myFilter.join("");
 }
-// boton de filtrar
 const filter = document.querySelector('.btn-filter');
 filter.addEventListener("click",addModalFilter);
 
 function addModalFilter(){
     blockScroll();
 
-    const { types, resistant:resistants, weaknesses } = filtersItems.getFiltersItems(data.pokemon);
+    const { types, resistant:resistants, weaknesses } = filtersItems.getFiltersItems(data.pokemon); 
 
     fillFilters(types, ".type", "type");
     fillFilters(resistants, ".resistant", "resistant");
